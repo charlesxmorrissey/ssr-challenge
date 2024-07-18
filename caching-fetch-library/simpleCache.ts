@@ -1,9 +1,9 @@
-interface ICache<T> {
+interface Cache<T> {
   [key: string]: T[];
 }
 
 /**
- * Cache Class
+ * Simple Cache Class
  *
  * This class provides a simple caching mechanism for storing and
  * retrieving values.
@@ -11,7 +11,7 @@ interface ICache<T> {
  * network requests by storing results.
  *
  * Usage:
- * const cache = new Cache('key');
+ * const cache = new SimpleCache('key');
  * cache.set('value'); // Stores 'value' with the key 'key'
  * const value = cache.get(); // Retrieves the value associated with 'key'
  *
@@ -23,7 +23,7 @@ interface ICache<T> {
  * - size(): Retrieves the size of the cache.
  */
 export class SimpleCache<T, K extends string = string> {
-  private cache: ICache<T> = {};
+  private cache: Cache<T> = {};
   private key: K;
 
   constructor(key: K) {
